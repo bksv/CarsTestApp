@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.UnauthorizedUserScreenFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline1Unauthorized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline2Unauthorized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalGuideline1Unauthorized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalGuideline2Unauthorized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.76" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline3Unauthorized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.495" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline4Unauthorized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.505" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clUnauthorizedFrontCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_2"
+            app:layout_constraintBottom_toTopOf="@id/horizontalGuideline1Unauthorized"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuideline3Unauthorized"
+            app:layout_constraintStart_toEndOf="@+id/verticalGuideline1Unauthorized">
+
+            <TextView
+                android:id="@+id/tvUnauthorizedFrontCamera"
+                style="@style/videoHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/front_camera"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivUnauthorizedFrontCameraMic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivUnauthorizedFrontCameraFullScreen"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivUnauthorizedFrontCameraFullScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fullscreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clUnauthorizedBackCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_2"
+            app:layout_constraintBottom_toTopOf="@id/horizontalGuideline1Unauthorized"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2Unauthorized"
+            app:layout_constraintStart_toEndOf="@+id/verticalGuideline4Unauthorized">
+
+            <TextView
+                android:id="@+id/tvUnauthorizedBackCamera"
+                style="@style/videoHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back_camera"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivUnauthorizedBackCameraMicOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mic_off"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivUnauthorizedBackCameraFullScreen"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivUnauthorizedBackCameraFullScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fullscreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clUnauthorizedVideoContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline2Unauthorized"
+            app:layout_constraintEnd_toEndOf="@id/verticalGuideline2Unauthorized"
+            app:layout_constraintStart_toStartOf="@id/verticalGuideline1Unauthorized"
+            app:layout_constraintTop_toTopOf="@id/horizontalGuideline1Unauthorized">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalGuideline5Unauthorized"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.495" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalGuideline6Unauthorized"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.505" />
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/vvUnauthorizedFirstResource"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/verticalGuideline5Unauthorized"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/vvUnauthorizedSecondResource"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/verticalGuideline6Unauthorized"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CarsTestApp</string>
+    <string name="welcome">WELCOME!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or">OR</string>
+    <string name="live_video">Live Video</string>
+    <string name="invalid_sign_in">You did not fill all the fields required!</string>
+    <string name="alert_positive_btn">Ok</string>
+    <string name="front_camera">Front camera</string>
+    <string name="back_camera">Back camera</string>
+    <string name="log_out">Log Out</string>
+    <string name="close">Close</string>
+    <string name="hello">Hello, %s</string>
+    <string-array name="filters">
+        <item>No Filter</item>
+        <item>Available</item>
+        <item>Hidden</item>
+        <item>Disabled</item>
+    </string-array>
+</resources>

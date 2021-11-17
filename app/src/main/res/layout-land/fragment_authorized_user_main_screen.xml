@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.AuthorizedUserMainScreenFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenVerticalGuideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.26" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenVerticalGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.285" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenVerticalGuideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.615" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenVerticalGuideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.625" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenVerticalGuideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.975" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenHorizontalGuideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenHorizontalGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenHorizontalGuideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainScreenHorizontalGuideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.52" />
+
+        <Spinner
+            android:id="@+id/spinnerFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/filters"
+            app:layout_constraintBottom_toTopOf="@id/mainScreenHorizontalGuideline1"
+            app:layout_constraintEnd_toStartOf="@id/mainScreenVerticalGuideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMainScreen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@id/mainScreenVerticalGuideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainScreenHorizontalGuideline1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_2"
+            app:layout_constraintBottom_toBottomOf="@+id/mainScreenHorizontalGuideline1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvMainScreenUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@{@string/hello(user)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvMainScreenLogOut"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMainScreenLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/log_out"
+                android:textColor="@color/red_1"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAuthorizedFrontCamera"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/blue_2"
+            app:layout_constraintBottom_toTopOf="@id/mainScreenHorizontalGuideline3"
+            app:layout_constraintEnd_toStartOf="@id/mainScreenVerticalGuideline3"
+            app:layout_constraintStart_toEndOf="@id/mainScreenVerticalGuideline2"
+            app:layout_constraintTop_toBottomOf="@id/mainScreenHorizontalGuideline2">
+
+            <TextView
+                android:id="@+id/tvAuthorizedFrontCamera"
+                style="@style/videoHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/front_camera"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAuthorizedFrontCameraMic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivAuthorizedFrontCameraFullScreen"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAuthorizedFrontCameraFullScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fullscreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAuthorizedBackCamera"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/blue_2"
+            app:layout_constraintBottom_toTopOf="@id/mainScreenHorizontalGuideline3"
+            app:layout_constraintEnd_toStartOf="@id/mainScreenVerticalGuideline5"
+            app:layout_constraintStart_toEndOf="@id/mainScreenVerticalGuideline4"
+            app:layout_constraintTop_toBottomOf="@id/mainScreenHorizontalGuideline2">
+
+            <TextView
+                android:id="@+id/tvAuthorizedBackCamera"
+                style="@style/videoHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back_camera"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAuthorizedBackCameraMicOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mic_off"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivAuthorizedBackCameraFullScreen"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAuthorizedBackCameraFullScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fullscreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/mainScreenHorizontalGuideline4"
+            app:layout_constraintEnd_toStartOf="@id/mainScreenVerticalGuideline5"
+            app:layout_constraintStart_toEndOf="@id/mainScreenVerticalGuideline2"
+            app:layout_constraintTop_toBottomOf="@id/mainScreenHorizontalGuideline3">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/mainScreenVerticalGuideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.48" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/mainScreenVerticalGuideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.49" />
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/vvAuthorizedFirstResource"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/mainScreenVerticalGuideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/vvAuthorizedSecondResource"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mainScreenVerticalGuideline7"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvMainScreenApiUpdateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Data from API updated %d seconds ago"
+            android:textColor="@color/blue_2"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mainScreenVerticalGuideline2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

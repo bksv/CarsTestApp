@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.carstestapp.util.extensions.StringExtKt" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="car"
+            type="com.example.carstestapp.model.entities.Car" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@{StringExtKt.getColorFromCarState(car.state, context)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/car_item_number"
+            style="@style/carNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@{String.valueOf(car.number)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ASD4QWE45" />
+
+        <TextView
+            android:id="@+id/car_item_date"
+            style="@style/carDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{StringExtKt.humanizeDate(car.date)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/car_item_guideline1"
+            tools:text="ASD4QWE45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/car_item_guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

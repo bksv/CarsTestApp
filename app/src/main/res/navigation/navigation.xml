@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/logInFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.carstestapp.view.fragments.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_authorizedUserMainScreenFragment"
+            app:destination="@id/authorizedUserMainScreenFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_unauthorizedUserScreenFragment"
+            app:destination="@id/unauthorizedUserScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authorizedUserMainScreenFragment"
+        android:name="com.example.carstestapp.view.fragments.AuthorizedUserMainScreenFragment"
+        android:label="fragment_authorized_user_main_screen"
+        tools:layout="@layout/fragment_authorized_user_main_screen" >
+        <argument
+            android:name="user_name"
+            app:argType="string"
+            app:nullable="false"
+            android:defaultValue="Error" />
+        <action
+            android:id="@+id/action_authorizedUserMainScreenFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/unauthorizedUserScreenFragment"
+        android:name="com.example.carstestapp.view.fragments.UnauthorizedUserScreenFragment"
+        android:label="fragment_unauthorized_user_screen"
+        tools:layout="@layout/fragment_unauthorized_user_screen" />
+</navigation>
